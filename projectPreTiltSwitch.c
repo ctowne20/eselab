@@ -23,9 +23,13 @@ int main(void)
 		if (digitalRead(TiltPin) == 0)
 		{
 			digitalWrite(LedPin, LOW); //light off when tilt switch not tilted
+			printf("Tilt Switch is off);
 		}
 		else 
+		{
 			digitalWrite(LedPin, HIGH);
+			printf("Tilt Switch is on");
+		}
 	}
 
 	return 0;
