@@ -2,7 +2,18 @@
 #include <wiringPi.h>
 #include <Python.h>
 
-#define SettingPin 0
+#define SettingPin 8
+#define Toast1 9
+#define Toast2 7
+#define Toast3 0
+#define Toast4 2
+#define Toast5 3
+#define Toast6 12
+#define Toast7 13
+#define ToastFrozen 14
+#define ToastBagel 15
+#define ToastCancel 16
+
 
 int main()
 {	
@@ -12,6 +23,16 @@ int main()
 	Py_Initialize();
 	PyRun_SimpleFile(); //Insert file name in parentheses
 	Py_Finalize();
+	
+	//if statements depending on type of breakfast food in the Calendar entry
+	//options:
+	//Toast- level 2 toast
+	//poptart = level 1 toast
+	//bagel = level 3 toast OR bagel feature
+	//frozen something = frozen feature
+	
 
+	if (calendarEntry == "poptart")
+			
 	return 0;
 }
