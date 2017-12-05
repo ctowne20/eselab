@@ -2,11 +2,13 @@
 #include <wiringPi.h>
 #include <Python.h>
 
-#define MAXLINESIZE 20
+#define MAXLINESIZE 300
 
 int main()
 {
 	char calendarEntry[MAXLINESIZE];
+	FILE *file;
+
 
 	Py_SetProgramName(argv[0]);
 	Py_Initialize();
@@ -16,5 +18,8 @@ int main()
 	
 	wiringPiSetup();
 	
-	
+	file = fopen("/tmp/test.txt", "r");
+	fscanf(file, "%s", calendarEntry);
+	printf("%s\n", calendarEntry);
+	fclose(file);
 }
