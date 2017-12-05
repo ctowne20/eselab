@@ -10,7 +10,8 @@ int main()
 
 	Py_SetProgramName(argv[0]);
 	Py_Initialize();
-	PyRun_SimpleFile();
+	PyRun_SimpleFile("from time import time,ctime\n"
+                     "print 'Today is',ctime(time())\n");
 	Py_Finalize();
 	
 	wiringPiSetup();
