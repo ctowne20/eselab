@@ -67,10 +67,17 @@ except ImportError:
             orderBy = 'startTime').execute()
       events = eventsResult.get('items', [])
 
+      
+      f = open("googleCalendar.txt", "w+")
+      
       if not events:
           print('No upcoming events found')
       for event in events:
           start = event['start'].get('dateTime', event['start'].get('date'))
           print(start, event['summary'])
+          for i in range(10)
+                  f.write(start, event['summary']
+          f.close()                
+                          
 if __name__ == '__main__':
     main()
