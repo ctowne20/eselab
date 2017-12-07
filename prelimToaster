@@ -4,11 +4,12 @@
 
 #define MAXLINESIZE 300
 
-void embedPython(char pFileName)
+void embedPython(const char pFileName)
 
 int main()
 {
-	char calendarEntry[MAXLINESIZE], pFileName;
+	char calendarEntry[MAXLINESIZE];
+	const char pFileName[17] = {g,o,o,g,l,e,C,a,l,e,n,d,a,r,.,p,y};
 	FILE *file;
 	
 	embedPython(pFileName);
@@ -22,7 +23,7 @@ int main()
 
 
 //resource: http://www.linuxjournal.com/article/8497
-void embedPython(char pFileName)
+void embedPython(const char pFileName)
 {
  	Py_Initialize();
  	PyRun_SimpleString(pFileName);
