@@ -4,7 +4,7 @@
 
 #define MAXLINESIZE 300
 
-void embedPython(const char pFileName)
+void embedPython(const char pFileName);
 
 int main()
 {
