@@ -4,22 +4,27 @@
 
 #define MAXLINESIZE 300
 
+void embedPython(char pFileName)
+
 int main()
 {
-	char calendarEntry[MAXLINESIZE];
+	char calendarEntry[MAXLINESIZE], pFileName;
 	FILE *file;
-
-
-	Py_SetProgramName(argv[0]);
-	Py_Initialize();
-	PyRun_SimpleFile("from time import time,ctime\n"
-                     "print 'Today is',ctime(time())\n");
-	Py_Finalize();
 	
+	embedPython(pFileName);
 	wiringPiSetup();
 	
 	file = fopen("/tmp/test.txt", "r");
 	fscanf(file, "%s", calendarEntry);
 	printf("%s\n", calendarEntry);
 	fclose(file);
+}
+
+
+//resource: http://www.linuxjournal.com/article/8497
+void embedPython(char pFileName)
+{
+ 	Py_Initialize();
+ 	PyRun_SimpleString(pFileName);
+  	Py_Finalize();
 }
