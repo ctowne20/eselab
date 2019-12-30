@@ -36,7 +36,7 @@ int main()
 	wiringPiSetup();
 	if (calendarEntry == "poptart")
 		pinMode(PINNUMBER, OUTPUT);
-	else if (calednarEntry == "toast")
+	else if (calendarEntry == "toast")
 		pinMode(pinnumber, OUTPUT);
 	else if (calendarEntry == "bagel")
 		pinMode(pinnumber, OUTPUT);
